@@ -1,0 +1,25 @@
+body{font-size:13px;color:#004910;font-family:Tahoma,Arial,Verdana}
+table.t0{border:0;border-collapse:collapse;font-size:13px}
+td.t0{border:0;padding:4px 4px;text-align:left;vertical-align:center}
+td.t1{border:0;padding:6px 16px;font-size:14px;background-color:#067020;color:#E0E9E0}
+table{border-collapse:collapse;font-size:12px;border:thin solid #33613E}
+th,td{border:thin solid #004910;padding:3px 6px;text-align:center;vertical-align:center}
+td.tl{text-align:left}
+td.r{color:#F00000}
+td.cm{background-color:#FFDD88}
+tr.gt{background-color:#E8F0E8}
+tr.ht{background-color:#067020;text-align:center;font-weight:bold;color:#E0E9E0}
+tr.c2{background-color:#F5DA80}
+tr.c3{background-color:#CAEC95}
+a{font-weight:bold;color:#047020}
+a:link{text-decoration:none;}a:visited{text-decoration:none;}a:hover{text-decoration:underline}
+a.sl{text-decoration:underline;color: #B2B8B2}a.sw:hover{text-decoration:underline}
+a.sw{text-decoration:none;color: #F0F8F0}a.sw:hover{text-decoration:underline}
+input.nt{border:thin solid #004910;font-size:13px;font-weight:bold;text-align:center}
+input.nl{border:thin solid #004910;font-size:13px;font-weight:bold}
+input.tx{border:thin solid #004910;font-size:12px;font-weight:bold;text-align:center}
+input.te{border:thin solid #004910;font-size:13px;width:525px}
+input.bb{font-weight:bold;font-size:13px}
+select.nc{border:thin solid #004910;padding:1px;font-size:13px;width:610px}
+select.di{border:thin solid #004910;padding:1px;font-size:12px;font-weight:bold}
+select.nv{border:thin solid #004910;padding:1px;font-size:13px;width:192px}
