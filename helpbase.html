@@ -1,46 +1,591 @@
 <!DOCTYPE html>
+<html lang="en" class="gr__lakondpluss_com_pl translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<html lang="ru">
+<title>AWP Trade 2.0.1 - knowledge base</title>
 
-<!-- Mirrored from arm20.com/helpbase.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Oct 2019 13:38:20 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<head>
-<title>АРМ Торговля 2.0.1 - база знаний</title>
-<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="База знаний, уроки по работе с программой. Универсальное программное обеспечение для автоматизации розничной торговли.">
 
-<!-- Bootstrap -->
-
-<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/callback.css">
-<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet"> -->
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-
+<link rel="icon" href="https://lakondpluss.com.pl/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="./helpbase_files/bootstrap.css">
+<link rel="stylesheet" href="./helpbase_files/style.css">
+<link rel="stylesheet" href="./helpbase_files/callback.css">
 <!--[if lt IE 9]>
-
-
-
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-
-
-
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
-
-
     <![endif]-->
 
-</head>
+<style type="text/css">.fancybox-margin{margin-right:17px;}</style><style data-styled="" data-styled-version="4.3.2"></style><style type="text/css">.apexcharts-canvas {
+  position: relative;
+  user-select: none;
+  /* cannot give overflow: hidden as it will crop tooltips which overflow outside chart area */
+}
 
-<body>
-<div id="kmacb" class="kmacb" style="display:none"><a title="Заказать обратный звонок" href="#" modal="kmacb-form" id="myBtn">
+/* scrollbar is not visible by default for legend, hence forcing the visibility */
+.apexcharts-canvas ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+}
+.apexcharts-canvas ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 0 0 1px rgba(255,255,255,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+.apexcharts-canvas.dark {
+  background: #343F57;
+}
+
+.apexcharts-inner {
+  position: relative;
+}
+
+.legend-mouseover-inactive {
+  transition: 0.15s ease all;
+  opacity: 0.20;
+}
+
+.apexcharts-series-collapsed {
+  opacity: 0;
+}
+
+.apexcharts-gridline, .apexcharts-text {
+  pointer-events: none;
+}
+
+.apexcharts-tooltip {
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px -4px #999;
+  cursor: default;
+  font-size: 14px;
+  left: 62px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 12;
+  transition: 0.15s ease all;
+}
+.apexcharts-tooltip.light {
+  border: 1px solid #e3e3e3;
+  background: rgba(255, 255, 255, 0.96);
+}
+.apexcharts-tooltip.dark {
+  color: #fff;
+  background: rgba(30,30,30, 0.8);
+}
+.apexcharts-tooltip * {
+  font-family: inherit;
+}
+
+.apexcharts-tooltip .apexcharts-marker,
+.apexcharts-area-series .apexcharts-area,
+.apexcharts-line {
+  pointer-events: none;
+}
+
+.apexcharts-tooltip.active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-tooltip-title {
+  padding: 6px;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.apexcharts-tooltip.light .apexcharts-tooltip-title {
+  background: #ECEFF1;
+  border-bottom: 1px solid #ddd;
+}
+.apexcharts-tooltip.dark .apexcharts-tooltip-title {
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid #333;
+}
+
+.apexcharts-tooltip-text-value,
+.apexcharts-tooltip-text-z-value {
+  display: inline-block;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.apexcharts-tooltip-text-z-label:empty,
+.apexcharts-tooltip-text-z-value:empty {
+  display: none;
+}
+
+.apexcharts-tooltip-text-value, 
+.apexcharts-tooltip-text-z-value {
+  font-weight: 600;
+}
+
+.apexcharts-tooltip-marker {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 0px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.apexcharts-tooltip-series-group {
+  padding: 0 10px;
+  display: none;
+  text-align: left;
+  justify-content: left;
+  align-items: center;
+}
+
+.apexcharts-tooltip-series-group.active .apexcharts-tooltip-marker {
+  opacity: 1;
+}
+.apexcharts-tooltip-series-group.active, .apexcharts-tooltip-series-group:last-child {
+  padding-bottom: 4px;
+}
+.apexcharts-tooltip-series-group-hidden {
+  opacity: 0;
+  height: 0;
+  line-height: 0;
+  padding: 0 !important;
+}
+.apexcharts-tooltip-y-group {
+  padding: 6px 0 5px;
+}
+.apexcharts-tooltip-candlestick {
+  padding: 4px 8px;
+}
+.apexcharts-tooltip-candlestick > div {
+  margin: 4px 0;
+}
+.apexcharts-tooltip-candlestick span.value {
+  font-weight: bold;
+}
+
+.apexcharts-tooltip-rangebar {
+  padding: 5px 8px;
+}
+
+.apexcharts-tooltip-rangebar .category {
+  font-weight: 600;
+  color: #777;
+}
+
+.apexcharts-tooltip-rangebar .series-name {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.apexcharts-xaxistooltip {
+  opacity: 0;
+  padding: 9px 10px;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+	background: #ECEFF1;
+  border: 1px solid #90A4AE;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-xaxistooltip.dark {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apexcharts-xaxistooltip:after, .apexcharts-xaxistooltip:before {
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.apexcharts-xaxistooltip:after {
+	border-color: rgba(236, 239, 241, 0);
+	border-width: 6px;
+	margin-left: -6px;
+}
+.apexcharts-xaxistooltip:before {
+	border-color: rgba(144, 164, 174, 0);
+	border-width: 7px;
+	margin-left: -7px;
+}
+
+.apexcharts-xaxistooltip-bottom:after, .apexcharts-xaxistooltip-bottom:before {
+  bottom: 100%;
+}
+
+.apexcharts-xaxistooltip-top:after, .apexcharts-xaxistooltip-top:before {
+  top: 100%;
+}
+
+.apexcharts-xaxistooltip-bottom:after {
+  border-bottom-color: #ECEFF1;
+}
+.apexcharts-xaxistooltip-bottom:before {
+  border-bottom-color: #90A4AE;
+}
+
+.apexcharts-xaxistooltip-bottom.dark:after {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+.apexcharts-xaxistooltip-bottom.dark:before {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-top:after {
+  border-top-color:#ECEFF1
+}
+.apexcharts-xaxistooltip-top:before {
+  border-top-color: #90A4AE;
+}
+.apexcharts-xaxistooltip-top.dark:after {
+  border-top-color:rgba(0, 0, 0, 0.5);
+}
+.apexcharts-xaxistooltip-top.dark:before {
+  border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.apexcharts-xaxistooltip.active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-yaxistooltip {
+  opacity: 0;
+  padding: 4px 10px;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+	background: #ECEFF1;
+  border: 1px solid #90A4AE;
+}
+
+.apexcharts-yaxistooltip.dark {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apexcharts-yaxistooltip:after, .apexcharts-yaxistooltip:before {
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.apexcharts-yaxistooltip:after {
+	border-color: rgba(236, 239, 241, 0);
+	border-width: 6px;
+	margin-top: -6px;
+}
+.apexcharts-yaxistooltip:before {
+	border-color: rgba(144, 164, 174, 0);
+	border-width: 7px;
+	margin-top: -7px;
+}
+
+.apexcharts-yaxistooltip-left:after, .apexcharts-yaxistooltip-left:before {
+  left: 100%;
+}
+
+.apexcharts-yaxistooltip-right:after, .apexcharts-yaxistooltip-right:before {
+  right: 100%;
+}
+
+.apexcharts-yaxistooltip-left:after {
+  border-left-color: #ECEFF1;
+}
+.apexcharts-yaxistooltip-left:before {
+  border-left-color: #90A4AE;
+}
+.apexcharts-yaxistooltip-left.dark:after {
+  border-left-color: rgba(0, 0, 0, 0.5);
+}
+.apexcharts-yaxistooltip-left.dark:before {
+  border-left-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-right:after {
+  border-right-color: #ECEFF1;
+}
+.apexcharts-yaxistooltip-right:before {
+  border-right-color: #90A4AE;
+}
+.apexcharts-yaxistooltip-right.dark:after {
+  border-right-color: rgba(0, 0, 0, 0.5);
+}
+.apexcharts-yaxistooltip-right.dark:before {
+  border-right-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip.active {
+  opacity: 1;
+}
+.apexcharts-yaxistooltip-hidden {
+  display: none;
+}
+
+.apexcharts-xcrosshairs, .apexcharts-ycrosshairs {
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-xcrosshairs.active, .apexcharts-ycrosshairs.active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-ycrosshairs-hidden {
+  opacity: 0;
+}
+
+.apexcharts-zoom-rect {
+  pointer-events: none;
+}
+.apexcharts-selection-rect {
+  cursor: move;
+}
+
+.svg_select_points, .svg_select_points_rot {
+  opacity: 0;
+  visibility: hidden;
+}
+.svg_select_points_l, .svg_select_points_r {
+  cursor: ew-resize;
+  opacity: 1;
+  visibility: visible;
+  fill: #888;
+}
+.apexcharts-canvas.zoomable .hovering-zoom {
+  cursor: crosshair
+}
+.apexcharts-canvas.zoomable .hovering-pan {
+  cursor: move
+}
+
+.apexcharts-xaxis,
+.apexcharts-yaxis {
+  pointer-events: none;
+}
+
+.apexcharts-zoom-icon, 
+.apexcharts-zoom-in-icon,
+.apexcharts-zoom-out-icon,
+.apexcharts-reset-zoom-icon, 
+.apexcharts-pan-icon, 
+.apexcharts-selection-icon,
+.apexcharts-menu-icon, 
+.apexcharts-toolbar-custom-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 24px;
+  color: #6E8192;
+  text-align: center;
+}
+
+
+.apexcharts-zoom-icon svg, 
+.apexcharts-zoom-in-icon svg,
+.apexcharts-zoom-out-icon svg,
+.apexcharts-reset-zoom-icon svg,
+.apexcharts-menu-icon svg {
+  fill: #6E8192;
+}
+.apexcharts-selection-icon svg {
+  fill: #444;
+  transform: scale(0.76)
+}
+
+.dark .apexcharts-zoom-icon svg, 
+.dark .apexcharts-zoom-in-icon svg,
+.dark .apexcharts-zoom-out-icon svg,
+.dark .apexcharts-reset-zoom-icon svg, 
+.dark .apexcharts-pan-icon svg, 
+.dark .apexcharts-selection-icon svg,
+.dark .apexcharts-menu-icon svg, 
+.dark .apexcharts-toolbar-custom-icon svg{
+  fill: #f3f4f5;
+}
+
+.apexcharts-canvas .apexcharts-zoom-icon.selected svg, 
+.apexcharts-canvas .apexcharts-selection-icon.selected svg, 
+.apexcharts-canvas .apexcharts-reset-zoom-icon.selected svg {
+  fill: #008FFB;
+}
+.light .apexcharts-selection-icon:not(.selected):hover svg,
+.light .apexcharts-zoom-icon:not(.selected):hover svg, 
+.light .apexcharts-zoom-in-icon:hover svg, 
+.light .apexcharts-zoom-out-icon:hover svg, 
+.light .apexcharts-reset-zoom-icon:hover svg, 
+.light .apexcharts-menu-icon:hover svg {
+  fill: #333;
+}
+
+.apexcharts-selection-icon, .apexcharts-menu-icon {
+  position: relative;
+}
+.apexcharts-reset-zoom-icon {
+  margin-left: 5px;
+}
+.apexcharts-zoom-icon, .apexcharts-reset-zoom-icon, .apexcharts-menu-icon {
+  transform: scale(0.85);
+}
+
+.apexcharts-zoom-in-icon, .apexcharts-zoom-out-icon {
+  transform: scale(0.7)
+}
+
+.apexcharts-zoom-out-icon {
+  margin-right: 3px;
+}
+
+.apexcharts-pan-icon {
+  transform: scale(0.62);
+  position: relative;
+  left: 1px;
+  top: 0px;
+}
+.apexcharts-pan-icon svg {
+  fill: #fff;
+  stroke: #6E8192;
+  stroke-width: 2;
+}
+.apexcharts-pan-icon.selected svg {
+  stroke: #008FFB;
+}
+.apexcharts-pan-icon:not(.selected):hover svg {
+  stroke: #333;
+}
+
+.apexcharts-toolbar {
+  position: absolute;
+  z-index: 11;
+  top: 0px;
+  right: 3px;
+  max-width: 176px;
+  text-align: right;
+  border-radius: 3px;
+  padding: 0px 6px 2px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.apexcharts-toolbar svg {
+  pointer-events: none;
+}
+
+.apexcharts-menu {
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 3px;
+  right: 10px;
+  opacity: 0;
+  min-width: 110px;
+  transition: 0.15s ease all;
+  pointer-events: none;
+}
+
+.apexcharts-menu.open {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-menu-item {
+  padding: 6px 7px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.light .apexcharts-menu-item:hover {
+  background: #eee;
+}
+.dark .apexcharts-menu {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .apexcharts-toolbar {
+    /*opacity: 0;*/
+  }
+
+  .apexcharts-canvas:hover .apexcharts-toolbar {
+    opacity: 1;
+  } 
+}
+
+.apexcharts-datalabel.hidden {
+  opacity: 0;
+}
+
+.apexcharts-pie-label,
+.apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
+  cursor: default;
+  pointer-events: none;
+}
+
+.apexcharts-pie-label-delay {
+  opacity: 0;
+  animation-name: opaque;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.apexcharts-canvas .hidden {
+  opacity: 0;
+}
+
+.apexcharts-hide .apexcharts-series-points {
+  opacity: 0;
+}
+
+.apexcharts-area-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,
+.apexcharts-line-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events, .apexcharts-radar-series path, .apexcharts-radar-series polygon {
+  pointer-events: none;
+}
+
+/* markers */
+
+.apexcharts-marker {
+  transition: 0.15s ease all;
+}
+
+@keyframes opaque {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}</style><link type="text/css" rel="stylesheet" charset="UTF-8" href="./helpbase_files/translateelement.css"></head>
+
+<body data-gr-c-s-loaded="true"><div id="gadsf21g"></div>
+<div id="kmacb" class="kmacb" style="display: block;"><a title="Request a call back" href="https://lakondpluss.com.pl/helpbase.html#" modal="kmacb-form" id="myBtn">
   <div class="kmacb-circle"></div>
   <div class="kmacb-circle-fill"></div>
   <div class="kmacb-img-circle"></div>
@@ -50,77 +595,77 @@
   <nav class="navbar navbar-fixed-top">
     <div class="container-fluid">
       <div class="nav-wrap">
-        <div class="dropdown lang pull-right"> <a href="#" class="dropdown-toggle current-lang" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Рус <span class="caret"></span></a>
+        <div class="dropdown lang pull-right"> <a href="https://lakondpluss.com.pl/helpbase.html#" class="dropdown-toggle current-lang" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rus </font></font><span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="index-2.html">Русский</a></li>
-            <li><a href="ua/index.html">Українська</a></li>
+            <li><a href="https://lakondpluss.com.pl/index-2.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Russian</font></font></a></li>
+            <li><a href="https://lakondpluss.com.pl/ua/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ukrainian</font></font></a></li>
           </ul>
         </div>
         
         <!-- Brand and toggle get grouped for better mobile display -->
         
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a class="navbar-brand" href="index.html" title="Spro"><img src="img/spro-brand-logo.png" alt=""></a> </div>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse-1" aria-expanded="false"> <span class="sr-only"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Toggle navigation</font></font></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a class="navbar-brand" href="https://lakondpluss.com.pl/index.html" title="Spro"><img src="./helpbase_files/spro-brand-logo.png" alt=""></a> </div>
         
         <!-- Collect the nav links, forms, and other content for toggling -->
         
         <div class="collapse navbar-collapse" id="header-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li ><a href="index.html">Главная</a></li>
-            <li class="active"><a href="helpbase.html">База знаний</a></li>
+            <li><a href="https://lakondpluss.com.pl/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">home</font></font></a></li>
+            <li class="active"><a href="https://lakondpluss.com.pl/helpbase.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Knowledge base</font></font></a></li>
 			   
 			  <li class="dropdown ">
-			  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Купить
-        <span class="caret"></span></a>
+			  <a class="dropdown-toggle" data-toggle="dropdown" href="https://lakondpluss.com.pl/helpbase.html#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Buy
+        </font></font><span class="caret"></span></a>
 			  
         <ul class="dropdown-menu">
-						<li class="dropdown-header">Цены и тарифы</li>
+						<li class="dropdown-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prices &amp; Tariffs</font></font></li>
 			<li class="divider"></li> 
-            <li><a href="prices.html">Цены</a></li>
-			<li><a href="plans.html">Тарифы подробно</a></li>
+            <li><a href="https://lakondpluss.com.pl/prices.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prices</font></font></a></li>
+			<li><a href="https://lakondpluss.com.pl/plans.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tariffs in detail</font></font></a></li>
           	<li class="divider"></li>      
 
-			<li class="dropdown-header">Купить онлайн</li>
+			<li class="dropdown-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Buy online</font></font></li>
 			<li class="divider"></li> 
-			<li><a href="arm_start.html">Тариф &quot;Старт&quot;</a></li>
-			<li><a href="arm_mag.html">Тариф &quot;Магазин&quot;</a></li>
-			<li><a href="arm_spm.html">Тариф &quot;Супермаркет&quot;</a></li>
+			<li><a href="https://lakondpluss.com.pl/arm_start.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tariff "Start"</font></font></a></li>
+			<li><a href="https://lakondpluss.com.pl/arm_mag.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tariff "Shop"</font></font></a></li>
+			<li><a href="https://lakondpluss.com.pl/arm_spm.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tariff "Supermarket"</font></font></a></li>
 				  
 				  </ul>
 			</li>
 				  
 			  
 			  
-            <li ><a href="setup.html">Скачать</a></li>
+            <li><a href="https://lakondpluss.com.pl/setup.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Download</font></font></a></li>
             
-         <li class="dropdown <br />
-<b>Notice</b>:  Undefined index: ia6 in <b>/home/info/public_html/arm20.com/template_c/b7fe25433c1704078c01ace3ee27428e78a4b499.file.top.tpl.php</b> on line <b>88</b><br />
-<br />
-<b>Notice</b>:  Trying to get property of non-object in <b>/home/info/public_html/arm20.com/template_c/b7fe25433c1704078c01ace3ee27428e78a4b499.file.top.tpl.php</b> on line <b>88</b><br />
+         <li class="dropdown &lt;br /&gt;
+&lt;b&gt;Notice&lt;/b&gt;:  Undefined index: ia6 in &lt;b&gt;/home/info/public_html/arm20.com/template_c/b7fe25433c1704078c01ace3ee27428e78a4b499.file.top.tpl.php&lt;/b&gt; on line &lt;b&gt;88&lt;/b&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;b&gt;Notice&lt;/b&gt;:  Trying to get property of non-object in &lt;b&gt;/home/info/public_html/arm20.com/template_c/b7fe25433c1704078c01ace3ee27428e78a4b499.file.top.tpl.php&lt;/b&gt; on line &lt;b&gt;88&lt;/b&gt;&lt;br /&gt;
 ">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Полезное
-        <span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="https://lakondpluss.com.pl/helpbase.html#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Useful
+        </font></font><span class="caret"></span></a>
         <ul class="dropdown-menu">
-                   	<li class="dropdown-header">Полезная информация</li>
+                   	<li class="dropdown-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Helpful information</font></font></li>
           	<li class="divider"></li>      
 
-          <li><a href="hard.html">Готовые решения</a></li>
-          <li><a href="dealer.html">Сотрудничество</a></li>
-          <li><a href="pdf/po_rus.pdf">Лицензионный договор</a></li>
+          <li><a href="https://lakondpluss.com.pl/hard.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ready-made solutions</font></font></a></li>
+          <li><a href="https://lakondpluss.com.pl/dealer.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cooperation</font></font></a></li>
+          <li><a href="https://lakondpluss.com.pl/pdf/po_rus.pdf"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">License agreement</font></font></a></li>
 			<li class="divider"></li>       
-          	<li class="dropdown-header">Адаптированные решения</li>
+          	<li class="dropdown-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adapted Solutions</font></font></li>
           	<li class="divider"></li>   
-          	 <li><a href="dress_shop.html">Магазин одежды</a></li>
-          	 <li><a href="prod_shop.html">Продуктовый магазин</a></li>   
+          	 <li><a href="https://lakondpluss.com.pl/dress_shop.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Clothing store</font></font></a></li>
+          	 <li><a href="https://lakondpluss.com.pl/prod_shop.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Grocery store</font></font></a></li>   
          
-          <li><a href="hoz_shop.html">Магазин хозтоваров</a></li>
-          <li><a href="hoz_shop.html">Строительный магазин</a></li>
-          <li  class="disabled"><a href="index.html">Сеть магазинов</a></li>
+          <li><a href="https://lakondpluss.com.pl/hoz_shop.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Household goods store</font></font></a></li>
+          <li><a href="https://lakondpluss.com.pl/hoz_shop.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hardware store</font></font></a></li>
+          <li class="disabled"><a href="https://lakondpluss.com.pl/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chain stores</font></font></a></li>
         </ul>
       </li>
           </ul>
-          <div class="sign-up"> <a href="setup.html"> <span class="blue full">Попробовать бесплатно</span> <span class="blue short">Попробовать</span> </a> </div>
+          <div class="sign-up"> <a href="https://lakondpluss.com.pl/setup.html"> <span class="blue full"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Try for free</font></font></span> <span class="blue short"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">To try</font></font></span> </a> </div>
         </div>
         
         <!-- /.navbar-collapse --> 
@@ -136,14 +681,12 @@
   <div class="jumbotron jumb-head" style="background-image: url(img/header-pr-bg.jpg);    background-position: center 97%;    background-size: cover;">
     <div class="container">
       <div class="jumb-heading">
-        <h1>АРМ Торговля V 2.0.1</h1>
-        <p>Универсальное программное обеспечение для автоматизации розничной торговли. <span>Автоматизация магазинов, супермаркетов, кафе, ресторанов. Сделано в Украине.</span> </p>
+        <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AWP Trade V 2.0.1</font></font></h1>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Universal software for retail automation. </font></font><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Automation of shops, supermarkets, cafes, restaurants. </font><font style="vertical-align: inherit;">Made in Ukraine.</font></font></span> </p>
       </div>
       <div class="jumb-phone-box">
         <ul class="jumb-phone">
-          <li><a href="tel:+380663448813"><img src="img/viber.png"/>(066) 344-88-13</a></li>
-          <li><a href="tel:+380735505813">(073) 550-58-13</a></li>
-		  <li><a href="tel:+380683960113">(068) 396-01-13</a></li>          
+          <li><a href="tel:+442038079602"><img src="./helpbase_files/viber.png"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">+442038079602</font></font></a></li>
         </ul>
       </div>
     </div>
@@ -152,46 +695,46 @@
 
 <section class="helpbase-promo">
   <div class="container">
-    <h3 class="helpbase-promo-heading">На этой странице собрана информация о программе <strong>АРМ "Розничная торговля"</strong>, включая ее детальное описание, видеоуроки и другой обучающий материал.</h3>
+    <h3 class="helpbase-promo-heading"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This page contains information about </font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AWP "Retail"</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , including its detailed description, video tutorials and other educational material.</font></font></h3>
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-sm-4 text-center"><a href="#features"><img src="img/ic1.png" alt="" class="desaturate"></a>
-        <h3>Особенности программы</h3>
-        <p>Функции, возможности и особенности программного обеспечения.</p>
+      <div class="col-sm-4 text-center"><a href="https://lakondpluss.com.pl/helpbase.html#features"><img src="./helpbase_files/ic1.png" alt="" class="desaturate"></a>
+        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Program features</font></font></h3>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Features, features and software features.</font></font></p>
       </div>
-      <div class="col-sm-4 text-center"> <a href="#v_lessons"><img src="img/ic_b1.png" alt="" class="desaturate"></a>
-        <h3>Видео-уроки</h3>
-        <p>Познакомьтесь с прграммой в простой и удобной форме видео-уроков.</p>
+      <div class="col-sm-4 text-center"> <a href="https://lakondpluss.com.pl/helpbase.html#v_lessons"><img src="./helpbase_files/ic_b1.png" alt="" class="desaturate"></a>
+        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Video lessons</font></font></h3>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Get to know the program in a simple and convenient way for video tutorials.</font></font></p>
       </div>
-      <div class="col-sm-4 text-center"> <a href="index.html"><img src="img/ic_b2.png" alt="" class="desaturate"></a>
-        <h3>Инструкция</h3>
-        <p>Инструкция к программе, детальное описание всех функций.</p>
+      <div class="col-sm-4 text-center"> <a href="https://lakondpluss.com.pl/index.html"><img src="./helpbase_files/ic_b2.png" alt="" class="desaturate"></a>
+        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Instruction manual</font></font></h3>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Instructions for the program, a detailed description of all functions.</font></font></p>
       </div>
     </div>
   </div>
 </section>
 <section class="section-base" id="features">
   <div class="container">
-    <h2>Базовый функционал АРМ</h2>
-    <p>Базовые функции выполняемые программным обеспечением, полностью или частично встречаются во всех подобных программах.</p>
+    <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Basic functionality of AWP</font></font></h2>
+    <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The basic functions performed by the software are fully or partially found in all such programs.</font></font></p>
   </div>
   <div class="container well">
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-12">
         <div class="media">
           <div class="media-body">
-            <h3 class="media-heading">Оборудование</h3>
-            <ul  class="list-group">
-              <li class="list-group-item"> Работа со сканером штрих-кода (любой тип подключения). </li>
-              <li class="list-group-item"> Работа с принтером штрих-кода, генерация собственных ш/к. </li>
-              <li class="list-group-item"> Работа с чекопечатью (все принтера, имеющие Windows драйвер). </li>
-              <li class="list-group-item"> Работа с фискальными регистраторами (Datecs, Exelio, Мария), возможность смешанного учета, работа с несколькими печатающими устройствами одновременно. </li>
-              <li class="list-group-item"> Поддержка считывателей дисконтных карт, печать ценников на обычном принтере, работа с дисплеем покупателя. </li>
-              <li class="list-group-item"> Работа как с весами с печатью этикеток, так и с подключаемыми к ПК. Прямая (из программы) загрузка весов. </li>
-              <li class="list-group-item"> Поддержка POS клавиатур, сенсорных дисплеев и пр. </li>
-              <li class="list-group-item"> Работа с терминалами сбора данных. </li>
-              <li class="list-group-item"> Безналичный расчет, работа с POS терминалами. </li>
+            <h3 class="media-heading"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Equipment</font></font></h3>
+            <ul class="list-group">
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Work with a barcode scanner (any type of connection). </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Work with a barcode printer, generating your own sh / c. </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Work with check printing (all printers with a Windows driver). </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Work with fiscal registrars (Datecs, Exelio, Maria), the possibility of mixed accounting, work with several printing devices at the same time. </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Support for discount card readers, printing price tags on a regular printer, working with the customer’s display. </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Work with scales with label printing, as well as connected to a PC. </font><font style="vertical-align: inherit;">Direct (from the program) loading of scales.</font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Support for POS keyboards, touch displays, etc. </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Work with data collection terminals. </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Bank transfer, work with POS terminals. </font></font></li>
             </ul>
           </div>
         </div>
@@ -199,17 +742,17 @@
       <div class="col-lg-4 col-md-4 col-sm-12">
         <div class="media">
           <div class="media-body">
-            <h3 class="media-heading">Основные функции</h3>
-            <ul   class="list-group">
-              <li class="list-group-item"> Полная номенклатура товара, категории. Информация о товаре, неограниченное кол-во полей. Себестоимость, наценка, дата прихода, срок годности, минимальный остаток и т.д. </li>
-              <li class="list-group-item"> Работа с накладными. Приходные, расходные, возвратные накладные. Акты переоценки (автоматические, ручные). Отсроченная переоценка. </li>
-              <li class="list-group-item"> <a href="javascript:void(0);" data-toggle="tooltip" data-placement="right" title="метод оценки запасов по себестоимости первых по времени закупок, &quot;first in - first out&quot; - первым поступил, первым продан">FIFO</a> метод расчета - фиксация себестоимости каждого товара. срок годности и т.д. </li>
-              <li class="list-group-item"> Инвентаризация: с ТСД и без, инвентаризация без закрытия, анализ итогов, локальная инвентаризация. </li>
-              <li class="list-group-item"> Контроль кассы, взаимозачеты с поставщиками, прочие расходы, зарплата. Расчет бонусов работникам, прибыль продавцов. </li>
-              <li class="list-group-item"> Дисконтные программы. Карточки, накопительные скидки, сезонные и временные скидки на товары и категории. Продажа в долг. </li>
-              <li class="list-group-item"> Градация доступа, неограниченное количество пользователей </li>
-              <li class="list-group-item"> Импорт-экспорт данных во все популярные форматы (xls, csv, html, mdb), возможность интеграции с другими программными продуктами. </li>
-              <li class="list-group-item"> Работа с филиалами, обмен накладными, центральный склад, работа с несколькими торговыми точками с одного рабочего места. </li>
+            <h3 class="media-heading"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Main functions</font></font></h3>
+            <ul class="list-group">
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Full product range, categories. </font><font style="vertical-align: inherit;">Product information, unlimited number of fields. </font><font style="vertical-align: inherit;">Cost, mark-up, date of arrival, expiration date, minimum balance, etc.</font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Work with invoices. </font><font style="vertical-align: inherit;">Income, expendables, return invoices. </font><font style="vertical-align: inherit;">Revaluation acts (automatic, manual). </font><font style="vertical-align: inherit;">Deferred revaluation.</font></font></li>
+              <li class="list-group-item"> <a href="javascript:void(0);" data-toggle="tooltip" data-placement="right" title="" data-original-title="метод оценки запасов по себестоимости первых по времени закупок, &quot;first in - first out&quot; - первым поступил, первым продан"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FIFO</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> calculation method - fixing the cost of each product. </font><font style="vertical-align: inherit;">expiration date, etc.</font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Inventory: with TSD and without, inventory without closing, analysis of totals, local inventory. </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cash desk control, offsets with suppliers, other expenses, salary. </font><font style="vertical-align: inherit;">Calculation of bonuses to employees, profit of sellers.</font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Discount programs. </font><font style="vertical-align: inherit;">Cards, cumulative discounts, seasonal and temporary discounts on goods and categories. </font><font style="vertical-align: inherit;">Selling on credit.</font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Access gradation, unlimited users </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Import-export of data in all popular formats (xls, csv, html, mdb), the ability to integrate with other software products. </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Work with branches, exchange of invoices, central warehouse, work with several retail outlets from one workplace. </font></font></li>
             </ul>
           </div>
         </div>
@@ -217,14 +760,14 @@
       <div class="col-lg-4 col-md-4 col-sm-12">
         <div class="media">
           <div class="media-body">
-            <h3 class="media-heading">Отчеты и аналитика</h3>
-            <ul   class="list-group">
-              <li class="list-group-item"> Отчеты по продажам за любой период. Отчеты в разрезе чеков, товаров, применения дисконтов, операций и пр. </li>
-              <li class="list-group-item"> Расширенные отчеты по движению товара или группы товаров. </li>
-              <li class="list-group-item"> Отчеты по лидерам/аутсайдерам продаж, сезонным колебаниям спроса и т.д. </li>
-              <li class="list-group-item"> Возможность просмотра склада на любую дату. </li>
-              <li class="list-group-item"> Расширенные отчеты по действиям пользователей. Привязка всех операций в программе к пользователю. </li>
-              <li class="list-group-item"> Возможность создания дополнительных отчетов без привлечения производителя ПО. </li>
+            <h3 class="media-heading"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Reports and analytics</font></font></h3>
+            <ul class="list-group">
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sales reports for any period. </font><font style="vertical-align: inherit;">Reports broken down by checks, goods, application of discounts, transactions, etc.</font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Advanced reports on the movement of goods or groups of goods. </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Reports on leaders / outsiders of sales, seasonal fluctuations in demand, etc. </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> The ability to view the warehouse at any date. </font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Advanced reports on user actions. </font><font style="vertical-align: inherit;">Binding all operations in the program to the user.</font></font></li>
+              <li class="list-group-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Ability to create additional reports without involving a software manufacturer. </font></font></li>
             </ul>
           </div>
         </div>
@@ -235,17 +778,17 @@
 <hr>
 <section class="section-unique">
   <div class="container">
-    <h2>Уникальный функционал АРМ</h2>
-    <p>Функции, которые не реализваны в других программных продуктах</p>
+    <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Unique AWP functionality</font></font></h2>
+    <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Functions that are not implemented in other software products</font></font></p>
   </div>
   <div class="container well">
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-12">
         <div class="media">
           <div class="media-body">
-            <h3 class="media-heading">Для пользователя</h3>
-            <ul  class="list-group">
-              <li class="list-group-item"> Автоматическое подключение к базе товаров ean13.info (более 10 млн. товарных позиций) позволяет в разы сократить время на ввод номенклатуры. Время на открытие небольшого магазина (5000 наименований) в "4 руки" сокращается с 5 до 2 рабочих дней. (при сканировании кода товара его наименование автоматически &quot;подтягивается&quot; из глобальной базы) </li>
+            <h3 class="media-heading"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">For the user</font></font></h3>
+            <ul class="list-group">
+              <li class="list-group-item"> Автоматическое подключение к базе товаров ean13.info (более 10 млн. товарных позиций) позволяет в разы сократить время на ввод номенклатуры. Время на открытие небольшого магазина (5000 наименований) в "4 руки" сокращается с 5 до 2 рабочих дней. (при сканировании кода товара его наименование автоматически "подтягивается" из глобальной базы) </li>
               <li class="list-group-item"> Простота освоения, большое количество обучающего видео. Кассовые модули рассчитаны на человека, умеющего пользоваться калькулятором. </li>
               <li class="list-group-item"> Надежность - программное обеспечение продолжает работать даже при отключении сети. </li>
               <li class="list-group-item"> Прозрачность отчетов - все отчеты ведутся с привязкой к пользователю и имеют данные было-стало.</li>
@@ -259,7 +802,7 @@
         <div class="media">
           <div class="media-body">
             <h3 class="media-heading">Для владельца бизнеса</h3>
-            <ul   class="list-group">
+            <ul class="list-group">
               <li class="list-group-item"> Работа программы с MySQL базой данных позволяет хранить ваши данные где угодно - на локальном компьютере, в сети, на удаленном сервере в любой стране мира. Вы защищены от несанкционированного доступа к Вашим данным, даже в случае изъятия оборудования.</li>
               <li class="list-group-item"> Front End (кассовый модуль, модуль продажи) программы способен работать на любом устройстве (планшет, мобильный телефон, компьютер). Удобно для выездной торговли, кафе, точек продажи с ограниченным пространством, торговых представителей. Удаленная печать чеков на любом принтере, локальная сеть для устройств на разных платформах.</li>
               <li class="list-group-item">Удаленный доступ к отчетам позволяет контролировать бизнес из любой точки мира, с любого устройства, без установки ПО, при любой скорости интернет</li>
@@ -274,7 +817,7 @@
         <div class="media">
           <div class="media-body">
             <h3 class="media-heading">Для разработчика</h3>
-            <ul   class="list-group">
+            <ul class="list-group">
               <li class="list-group-item"> Открытая модель базы данных. Используйте базу программы для создания новых модулей, отчетов, клиентов. </li>
               <li class="list-group-item"> Простое создание и доработка мультиплатформенных модулей к программе. Для доработки клиентов на HTML/PHP не требуется специальных знаний. Изменения могут быть внесены даже пользователем. </li>
               <li class="list-group-item"> Нет привязки к операционной системе, устройству или языку программирования. Клиент для MySQL может быть разработан для любой платформы и на любом языке программирования. Разрабатывайте свои модули, отчеты и клиенты. </li>
@@ -290,60 +833,60 @@
     <h2>Видеоуроки по работе с программой</h2>
     <div class="row">
       <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip1" title="Общие принципы работы с программой" href="https://www.youtube.com/watch?v=92gSie5rWjA&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/0_v.png" title="Общие принципы работы с программой"  id="video1"/> </a> </div>
+        <div class="gallery-item"> <a id="tip1" title="General principles of work with the program" href="https://www.youtube.com/watch?v=92gSie5rWjA&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/0_v.png" title="General principles of work with the program" id="video1"> </a> </div>
       </div>
       <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip2" title="Работа с кассовым модулем" href="https://www.youtube.com/watch?v=SGm2mvng0wg&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/1_v.png" title="Работа с кассовым модулем"  id="video2"/> </a> </div>
+        <div class="gallery-item"> <a id="tip2" title="Work with the cash module" href="https://www.youtube.com/watch?v=SGm2mvng0wg&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/1_v.png" title="Work with the cash module" id="video2"> </a> </div>
       </div>
       <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip3" title="Редактирование справочников" href="https://www.youtube.com/watch?v=7vjKtZJbGec&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/2_v.png" title="Редактирование справочников"  id="video3"/> </a> </div>
+        <div class="gallery-item"> <a id="tip3" title="Editing directories" href="https://www.youtube.com/watch?v=7vjKtZJbGec&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/2_v.png" title="Editing directories" id="video3"> </a> </div>
       </div>
       <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip4" title="Отчеты о продажах, прибыль" href="https://www.youtube.com/watch?v=B20nWFlSe2I&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/3_v.png" title="Отчеты о продажах, прибыль"  id="video4"/> </a> </div>
+        <div class="gallery-item"> <a id="tip4" title="Sales reports, profit" href="https://www.youtube.com/watch?v=B20nWFlSe2I&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/3_v.png" title="Sales reports, profit" id="video4"> </a> </div>
       </div>
       <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip5" title="Работа с сервисом онлайн-статистики" href="https://www.youtube.com/watch?v=niL7pHe0c_8&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/4_v.png" title="Работа с сервисом онлайн-статистики"  id="video5"/> </a> </div>
+        <div class="gallery-item"> <a id="tip5" title="Work with the online statistics service" href="https://www.youtube.com/watch?v=niL7pHe0c_8&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/4_v.png" title="Work with the online statistics service" id="video5"> </a> </div>
       </div>
       <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip6" title="Инкассации, платежи, переоценка" href="https://www.youtube.com/watch?v=pWFiHuOVlig&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/5_v.png" title="Инкассации, платежи, переоценка"  id="video6"/> </a> </div>
+        <div class="gallery-item"> <a id="tip6" title="Collection, payments, revaluation" href="https://www.youtube.com/watch?v=pWFiHuOVlig&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/5_v.png" title="Collection, payments, revaluation" id="video6"> </a> </div>
       </div>
       <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip7" title="Дисконты и акции" href="https://www.youtube.com/watch?v=-SHE6QEnZfI&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/6_v.png" title="Дисконты и акции"  id="video7"/> </a> </div>
+        <div class="gallery-item"> <a id="tip7" title="Discounts and promotions" href="https://www.youtube.com/watch?v=-SHE6QEnZfI&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/6_v.png" title="Discounts and promotions" id="video7"> </a> </div>
       </div>
       <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip8" title="Импорт номенклатуры и обновление цен интернет-магазина" href="https://www.youtube.com/watch?v=LwMCJVaP6RI&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/8_v.png" title="Импорт номенклатуры и обновление цен интернет-магазина"  id="video8"/> </a> </div>
+        <div class="gallery-item"> <a id="tip8" title="Importing items and updating online store prices" href="https://www.youtube.com/watch?v=LwMCJVaP6RI&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/8_v.png" title="Importing items and updating online store prices" id="video8"> </a> </div>
       </div>
       <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip9" title="Создание товаров с собственным ш/к, связь с Seagull Bartender" href="https://www.youtube.com/watch?v=HwRz1TVfBrk&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/9_v.png" title="Создание товаров с собственным ш/к, связь с Seagull Bartender"  id="video9"/> </a> </div>
+        <div class="gallery-item"> <a id="tip9" title="Creation of goods with own sh / c, communication with Seagull Bartender" href="https://www.youtube.com/watch?v=HwRz1TVfBrk&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/9_v.png" title="Creation of goods with own sh / c, communication with Seagull Bartender" id="video9"> </a> </div>
       </div>
       <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip10" title="Глобальные настройки программы" href="https://www.youtube.com/watch?v=cHPBJ9LG0gg&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/10_v.png" title="Глобальные настройки программы"  id="video10"/> </a> </div>
+        <div class="gallery-item"> <a id="tip10" title="Global program settings" href="https://www.youtube.com/watch?v=cHPBJ9LG0gg&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/10_v.png" title="Global program settings" id="video10"> </a> </div>
       </div>
             <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip11" title="Проведение инвентаризации" href="https://www.youtube.com/watch?v=Nx_SAgp1gRQ&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/11_v.png" title="Проведение инвентаризации"  id="video11"/> </a> </div>
+        <div class="gallery-item"> <a id="tip11" title="Inventory" href="https://www.youtube.com/watch?v=Nx_SAgp1gRQ&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/11_v.png" title="Inventory" id="video11"> </a> </div>
       </div>
       
       
                   <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip12" title="Режим ресторан" href="https://www.youtube.com/watch?v=YcjPG5Z0XFs&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/12_v.png" title="Режим ресторан"  id="video12"/> </a> </div>
+        <div class="gallery-item"> <a id="tip12" title="Restaurant Mode" href="https://www.youtube.com/watch?v=YcjPG5Z0XFs&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/12_v.png" title="Restaurant Mode" id="video12"> </a> </div>
       </div>
 
 		                  <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="gallery-item"> <a id="tip13" title="Модуль бармена-официанта" href="https://www.youtube.com/watch?v=82XqeBVOEIY&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="im1/13_v.png" title="Модуль бармена-официанта"  id="video13"/> </a> </div>
+        <div class="gallery-item"> <a id="tip13" title="Waiter Bartender Module" href="https://www.youtube.com/watch?v=82XqeBVOEIY&amp;feature=player_embedded#at=41" rel="gallery"> <img class="img-responsive gallery" src="./helpbase_files/13_v.png" title="Waiter Bartender Module" id="video13"> </a> </div>
       </div>
 
 		
     </div>
     
-	  <div class="text-center"> </a> <a href="https://www.youtube.com/playlist?list=PLSSPeLnUqsg5vVN-wXwlNE2zHe2eQxcJ5" target="_blank">
+	  <div class="text-center">  <a href="https://www.youtube.com/playlist?list=PLSSPeLnUqsg5vVN-wXwlNE2zHe2eQxcJ5" target="_blank">
       <button class="blue full">Проблемы с отображением видео? Посетите наш Youtube канал!</button>
       </a> </div>
-    <br/><br/>
+    <br><br>
     
-    <div class="text-center">Уроки расположены в рекомендуемом порядке, для обучения администратора/кладовщика. Для обучения кассира используйте урок №2, &quot;Работа с кассовым модулем&quot;. Большинство уроков предполагает использование сканера штрих-кодов. Если Вы работаете без сканера - обратите внимание на уроки "Работа с облачной кассой" и "Склад без сканера штрих-кодов"</div>
+    <div class="text-center">Уроки расположены в рекомендуемом порядке, для обучения администратора/кладовщика. Для обучения кассира используйте урок №2, "Работа с кассовым модулем". Большинство уроков предполагает использование сканера штрих-кодов. Если Вы работаете без сканера - обратите внимание на уроки "Работа с облачной кассой" и "Склад без сканера штрих-кодов"</div>
     <div class="get-for-free"> <a href="javascript:void(0)" data-toggle="modal" data-target="#specialoffer">
       <button class="green full">Задать вопрос</button>
-      </a> <a href="setup.html">
+      </a> <a href="https://lakondpluss.com.pl/setup.html">
       <button class="blue full">Попробовать бесплатно</button>
       </a> </div>
   </div>
@@ -354,9 +897,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <ul class="footer-phone">
-            <li><a href="tel:+380663448813">(066) 344-88-13</a></li>
-            <li><a href="tel:+380735505813">(073) 550-58-13</a></li>
-            <li><a href="tel:+380683960113">(068) 396-01-13</a></li>
+            <li><a href="tel:+442038079602">+442038079602</a></li>
           </ul>
         </div>
         
@@ -364,10 +905,7 @@
         
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <ul class="footer-social">
-           
-          
-            <li><a href="https://www.facebook.com/mpk.dn.ua/" class="fb-link" target="_blank">fb</a></li>
-            <li><a href="#" class="tweet-link">tw</a></li>
+            <li><a href="https://lakondpluss.com.pl/helpbase.html#" class="tweet-link">tw</a></li>
           </ul>
         </div>
       </div>
@@ -377,41 +915,37 @@
       <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <ul class="footer-phone">
-            <li><a href="mailto:info@arm20.com">info@arm20.com</a></li>
-          
+            <li><a href="mailto:LLP.Lakond.s@gmail.com">LLP.Lakond.s@gmail.com</a></li>
           </ul>
         </div>
     </div></div>
-    
-    
     <div class="footer-nav">
       <div class="row">
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-          <div class="footer-heading">О компании</div>
+          <div class="footer-heading"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">About company</font></font></div>
           <ul class="footer-menu">
-            <li><a href="index.html">Главная страница</a></li>
-            <li><a href="#">Контактные данные</a></li>
-            <li><a href="index-2.html#feedback">Отзывы о нас</a></li>
-            <li><a href="http://www.ean13.info/" target="_blank">База штрих-кодов</a></li>
-            <li><a href="index4612.html?fpo=1">Написать в поддержку</a></li>
+            <li><a href="/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Main page</font></font></a></li>
+            <li><a href="/index.html#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Contact details</font></font></a></li>
+            <li><a href="/index-2.html#feedback"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Feedback about us</font></font></a></li>
+            <li><a href="http://www.ean13.info/" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Barcode Base</font></font></a></li>
+            <li><a href="/index4612.html?fpo=1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Write to support</font></font></a></li>
           </ul>
         </div>
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-          <div class="footer-heading">О программе</div>
+          <div class="footer-heading"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">About the program</font></font></div>
           <ul class="footer-menu">
-            <li><a href="helpbase.html">Документация</a></li>
-            <li><a href="helpbase.html#v_lessons">Видео уроки</a></li>
-            <li><a href="helpbase.html#features">Особенности ПО</a></li>
+            <li><a href="/helpbase.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Documentation</font></font></a></li>
+            <li><a href="/helpbase.html#v_lessons"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Video lessons</font></font></a></li>
+            <li><a href="/helpbase.html#features"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Software Features</font></font></a></li>
           </ul>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-          <div class="footer-heading">Приобрести</div>
+          <div class="footer-heading"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">To get</font></font></div>
           <ul class="footer-menu">
-            <li><a href="setup.html#fullver">Скачать бесплатно</a></li>
-            <li><a href="prices.html">Как купить?</a></li>
-            <li><a href="hard.html">Оборудование и комплекты</a></li>
-            <li><a href="pdf/po_rus.pdf" target="_blank">Договор поставки (PDF)</a></li>
-			  <li><a href="pdf/how_return.pdf" target="_blank">Условия возврата (PDF)</a></li>
+            <li><a href="/setup.html#fullver"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Free download</font></font></a></li>
+            <li><a href="/prices.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">How to buy?</font></font></a></li>
+            <li><a href="/hard.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Equipment and kits</font></font></a></li>
+            <li><a href="/pdf/po_rus.pdf" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Delivery Contract (PDF)</font></font></a></li>
           </ul>
         </div>
       
@@ -420,12 +954,11 @@
     <div class="row">
       <div class="col-xs-12 col-sm-10  col-lg-10">
         <div class="footer-info">
-         <p>Представительства: <strong>г. Киев</strong>, ул. Речная, 3, оф. 6; <strong>г. Краматорск</strong>, ул. Ярослава Мудрого, 70, оф. 2; тел.: (066) 344-88-13 (068) 396-01-13 (073) 550-58-13	</p>
-         <p>График работы поддержки для всех тарифов, кроме "Супермаркет" - понедельник-пятница,  10:00 до 17:00.</p>
+         <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Representative offices: </font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kiev</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , st. </font><font style="vertical-align: inherit;">River, 3, of. </font><font style="vertical-align: inherit;">6; </font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kramatorsk</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , st. </font><font style="vertical-align: inherit;">Yaroslav the Wise, 70, of. </font><font style="vertical-align: inherit;">2; </font><font style="vertical-align: inherit;">tel .: (066) 344-88-13 (068) 396-01-13 (073) 550-58-13	</font></font></p>
+         <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The support work schedule for all tariffs except Supermarket is Monday-Friday, 10:00 to 17:00.</font></font></p>
          
-          <p>Создано Spro - автоматизация торговли в 2016 году. Все права защищены. Копирование информации с данного сайта возможно только с письменного
-           разрешения правообладателя. Услуги предоставояются ТОВ "ЄШКА" Харківська обл., с. Яремівка, вул.Центральна 14, р/р 26000053618678   ПАТ "Приват банк" м.Краматорська, МФО 335548, ЗКПО 36468081</p>
-			<p>Оплата: <img width="40" src="img/visa.gif"/></p>
+          <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Created by Spro - trade automation in 2016. </font><font style="vertical-align: inherit;">All rights reserved. </font><font style="vertical-align: inherit;">Copying information from this site is possible only with the written permission of the copyright holder. </font><font style="vertical-align: inherit;">Services are provided by TOV "ЄШКА" Kharkivska obl., S. </font><font style="vertical-align: inherit;">Yaremivka, Tsentralna vul. 14, r / r 26000053618678 Private enterprise "Privat bank" metro Kramatorska, MFO 335548, ZKPO 36468081</font></font></p>
+			<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Payment: </font></font><img width="40" src="./helpbase_files/visa.gif"></p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-2 col-lg-2">
@@ -433,7 +966,7 @@
        
          
          <!-- GOOGLE ANALYTYCS -->
-<script>
+<script async="" src="./helpbase_files/analytics.js.download"></script><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -455,7 +988,7 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 "' alt='' title='LiveInternet: показано число просмотров за 24"+
 " часа, посетителей за 24 часа и за сегодня' "+
 "border='0' width='88' height='31'><\/a>")
-</script><!--/LiveInternet-->
+</script><a href="https://www.liveinternet.ru/click" target="_blank"><img src="./helpbase_files/hit" alt="" title="LiveInternet: shows the number of views in 24 hours, visitors in 24 hours and today" border="0" width="88" height="31"></a><!--/LiveInternet-->
            </div>
       </div>
     </div>
@@ -469,25 +1002,25 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 
       <div class="modal-header">
 
-        <button type="button" data-dismiss="modal" aria-label="Close" class="close">x</button>
+        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x</font></font></button>
 
-        <h4 class="modal-title">Есть вопросы? Мы перезвоним!</h4>
+        <h4 class="modal-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Have questions? </font><font style="vertical-align: inherit;">We will call you back!</font></font></h4>
 
       </div>
 
       <div class="modal-body popup_data_basket text-center">
 
-        <form action="http://arm20.com/oneclick.php" method="post" class="form specialoffer" id="myForm"  data-toggle="validator">
+        <form action="http://arm20.com/oneclick.php" method="post" class="form specialoffer" id="myForm" data-toggle="validator">
 
           <fieldset class="form-group">
 
-            <input type="text" name="phone" placeholder="Ваш номер телефона" class="mask_phone form__input form-control required"  required>
+            <input type="text" name="phone" placeholder="Ваш номер телефона" class="mask_phone form__input form-control required" required="">
 
           </fieldset>
 
           <fieldset class="line-centered">
 
-            <button type="submit" onclick="goog_report_conversion();document.getElementById('myForm').submit();" data-dismiss="modal" class="blue full">Отправить</button>
+            <button type="submit" onclick="goog_report_conversion();document.getElementById(&#39;myForm&#39;).submit();" data-dismiss="modal" class="blue full"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Submit</font></font></button>
 
           </fieldset>
 
@@ -526,11 +1059,11 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 
 
  
-<script src="js/jquery-1.11.2.min.js"></script> 
-<script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="js/fancy/jquery.fancybox8cbb.css?v=2.1.5" type="text/css" media="screen" />
-<script type="text/javascript" src="js/fancy/jquery.fancybox.pack8cbb.js?v=2.1.5"></script> 
-<script src="js/kmacb.js"></script> 
+<script src="./helpbase_files/jquery-1.11.2.min.js.download"></script> 
+<script src="./helpbase_files/bootstrap.min.js.download"></script>
+<link rel="stylesheet" href="./helpbase_files/jquery.fancybox8cbb.css" type="text/css" media="screen">
+<script type="text/javascript" src="./helpbase_files/jquery.fancybox.pack8cbb.js.download"></script> 
+<script src="./helpbase_files/kmacb.js.download"></script> 
 <script type="text/javascript">
 	setTimeout(function(){$('.kmacb').fadeIn('fast')},60000);  //30000 = 30 секунд
 var btn = document.getElementById("myBtn");
@@ -610,7 +1143,7 @@ btn.onclick = function() {
 
   </script> 
 
-</body>
 
-<!-- Mirrored from arm20.com/helpbase.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Oct 2019 13:38:28 GMT -->
-</html>
+
+<!-- Mirrored from arm20.com/helpbase.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Oct 2019 13:38:28 GMT --><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./helpbase_files/translate_24dp.png" width="20" height="20" alt="Google Translate"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
